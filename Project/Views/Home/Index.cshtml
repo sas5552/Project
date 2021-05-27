@@ -1,0 +1,52 @@
+﻿@{
+    Layout = null;
+    ViewBag.Title = "Index";
+}
+
+<link href="https://fonts.googleapis.com/css?family=Comfortaa|EB+Garamond" rel="stylesheet">
+
+@Styles.Render("~/Content/Site.css")
+@Scripts.Render("~/Scripts/jquery-3.3.1.js")
+@Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.js")
+
+@using Project.Models;
+@model IEnumerable<Сategory>
+
+<body>
+    <div class="container">
+        <header>
+            <h2>ГИД ПО ЖЕНСКОЙ ОДЕЖДЕ</h2>
+        </header>
+        <div id="space"></div>
+        <div class="content">
+            <div class="image">
+                <img src="~/Content/Images/image_women.jpg" />
+            </div>
+        <div class="menu">
+        @foreach (Сategory c in Model)
+        {
+        <p onclick="down(@c.Id)">
+            <a class="menu" onclick="down(@c.Id)">@Ajax.ActionLink(c.ClothingCategory, "Kind", "Home", new { id = c.Id }, new AjaxOptions { UpdateTargetId = c.Id.ToString() })</a>
+        </p>
+        <ul id=@c.Id style="display:none"></ul>
+        }
+        </div>
+            <br clear="all" />
+        </div>
+    </div>
+</body>
+
+<script>
+    function down(id) {
+        var a = document.getElementById(id);
+
+        if (a.style.display == 'none') {
+            a.style.display = 'block'
+        }
+
+        else if
+    (a.style.display == 'block') {
+            a.style.display = 'none';
+        }
+    };
+</script>

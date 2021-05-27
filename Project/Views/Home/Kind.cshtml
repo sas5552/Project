@@ -1,0 +1,8 @@
+﻿@using Project.Models;
+@model IEnumerable<Kind>
+
+@foreach (Kind k in Model)
+{
+    <li>@k.Name</li>
+}
+

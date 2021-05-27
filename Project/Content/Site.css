@@ -1,0 +1,30 @@
+﻿body {
+    background-color: #F3F3F3;
+    font-family: 'EB Garamond', serif;
+}
+
+.container {
+    margin: 20px 40px 20px 40px;
+    background-color: #FFFFFF;
+    font-size: 20px;
+}
+
+header {
+    padding: 10px;
+    text-align: center;
+    background-size: cover;
+}
+
+.image {
+    float: left;
+}
+
+.menu {
+    float: inherit;
+    padding: 5px;
+}
+
+#space {
+    height: 20px;
+    background-color: #F3F3F3;
+}
